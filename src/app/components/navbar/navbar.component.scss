@@ -1,10 +1,16 @@
 $custom-color: #ff0000;
 
 /* Apply custom color to the navbar */
-.container-fluid img{
-    margin: auto;
-    padding: 5px;
-  width: 100px;
+.navbar{
+ padding:3px;
+ height: 100px;
+}
+
+.navbar img{
+    margin: 10px;
+    padding: 25px;
+    width:100px;
+  
 }
 .item{
   align-items: center;
@@ -18,11 +24,11 @@ ul {
 
 }
 
-ol{
-  float: right;
+span{
+  float: left;
 }
 
-ol a {
+ span a {
   display: block;
   color: white;
   text-align: left;
@@ -31,6 +37,6 @@ ol a {
 }
 
 /* Change the link color to #111 (black) on hover */
-ol a:hover {
+span a:hover {
   background-color: #111;
 }

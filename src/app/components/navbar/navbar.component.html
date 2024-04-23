@@ -41,13 +41,19 @@
                     <a class="nav-link" href="#">product</a>
                     <a class="nav-link" href="#">checkout</a>-->
                     
-                      <img src="../assets/1.jpg" alt="...">
+                      <img class="image" src="../assets/1.jpg" alt="...">
                       <ul>
-                      <ol><a class="active" href="#home">Home</a></ol>
-                      <ol><a href="#news">News</a></ol>
-                      <ol><a href="#contact">Contact</a></ol>
-                      <ol><a href="#about">About</a></ol>
-                
+                        <a  routerLink="home" routerLinkActive="active">
+                          <span>Home</span>
+                        </a> 
+                        <a  routerLink="/product" routerLinkActive="active">
+                          <span>product</span>
+                        </a>
+                        <a  routerLink="/checkout" routerLinkActive="active">
+                          <span>Checkout</span>
+                        </a>
+                    
+                      <button class="btn btn-outline-success" type="submit">login</button>
                     </ul>
                  <!--  <button class="btn btn-outline-success" type="submit">login</button>-->
                <!--- </div>
