@@ -28,4 +28,19 @@
     font-weight: 700;
     font-style: normal;
   }
-  
+  .Text-price{
+    color: red;
+    text-decoration: line-through;
+  }
+  .current-price{
+    color: rgb(139, 222, 16);
+  }
+  .sale-sticker {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
