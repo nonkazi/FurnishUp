@@ -1,0 +1,15 @@
+$custom-color: #ff0000;
+
+/* Apply custom color to the navbar */
+.container-fluid img{
+    margin: auto;
+    padding: 5px;
+  width: 100px;
+}
+.navbar-nav{
+    float:left;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
