@@ -1,0 +1,42 @@
+$custom-color: #ff0000;
+
+/* Apply custom color to the navbar */
+.navbar{
+ padding:3px;
+ height: 100px;
+}
+
+.navbar img{
+    margin: 10px;
+    padding: 25px;
+    width:100px;
+  
+}
+.item{
+  align-items: center;
+  float: left;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+}
+
+span{
+  float: left;
+}
+
+ span a {
+  display: block;
+  color: white;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+span a:hover {
+  background-color: #111;
+}
