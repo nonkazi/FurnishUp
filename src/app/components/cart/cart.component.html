@@ -1,63 +1,173 @@
-<div class="container">
-    <div class="navbar">
-        <nav class="nav justify-content-center">
-          <a class="nav-link active" href="#">Active link</a>
-          <a class="nav-link" href="#">Link</a>
-          <a class="nav-link disabled" href="#">Disabled link</a>
-        </nav>
-    </div>
-    <div class="cartMain">
-        <h2>Your Cart</h2>
-        <h3>Items</h3>
-    </div>
-    <hr>
-    <ul class="cartDescrip">
-        <li>Product Details</li>
-        <li>Quantity</li>
-        <li>Price</li>
-        <li>Total Price</li>
-    </ul>
-    <div class="pCard">
-        <div class="card mb-3 cardCont" style="max-width: 540px;">
-            <div class="row g-0 cardCont">
-              <div class="imgCard">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6vRBWDk2BCApAJyKVBX2nEllZEhXzu9OnuH2Js3Ky9g&s" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Naomi bookshelf</h5>
-                </div>
-              </div>
-            </div>
-        </div>
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="imgCard">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6vRBWDk2BCApAJyKVBX2nEllZEhXzu9OnuH2Js3Ky9g&s" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Naomi bookshelf</h5>
-                </div>
-              </div>
-            </div>
-        </div>
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="imgCard">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6vRBWDk2BCApAJyKVBX2nEllZEhXzu9OnuH2Js3Ky9g&s" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Naomi bookshelf</h5>
-                </div>
-              </div>
-            </div>
-        </div>
-    </div>
-    <div class="quantity">
-        <button class="quantity-minus" data-action="minus" type="button">-</button>
-        <input class="product-qty" type="number" name="product-qty" min="0" max="10" value="1">
-        <button class="quantity-add" data-action="add" type="button">+</button>
-    </div>
+<div class="navbar">
+  <nav class="nav justify-content-center">
+    <a class="nav-link active" href="#">Active link</a>
+    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link disabled" href="#">Disabled link</a>
+  </nav>
 </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <!-- Main conatiner has the shopping cart features -->
+  <div class="container cMain"> 
+    <div class="col">
+      <!-- Main Card contains the shopping cart features and its options -->
+      <div class="mainCard">
+        <div class="cartHeading">
+            <h2>Your Cart</h2>
+            <h3>Items</h3>
+        </div>
+        <hr>
+        <ul class="cartDescrip">
+            <li>Product Details</li>
+            <li>Quantity</li>
+            <li>Price</li>
+            <li>Total Price</li>
+        </ul>
+        <!-- Products Articles -->
+        <article class="pArt">
+          <div class="pCard">
+              <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6vRBWDk2BCApAJyKVBX2nEllZEhXzu9OnuH2Js3Ky9g&s"  alt="...">
+                <p>Naomi Bookshelf</p>
+              </div>
+          </div>
+          <div class="quantity">
+            <button class="minus" aria-label="Decrease">&minus;</button>
+            <input type="number" class="input-box" value="1" min="1" max="10">
+            <button class="plus" aria-label="Increase">&plus;</button>
+          </div>
+          <div class="price">
+            <div class="price-wrap lh-sm"> 
+              <p>R </p> 
+              <p>R </p> 
+            </div> <!-- price-wrap .// -->
+          </div>
+          <div class="remove">
+            <div class="float-lg-end">
+              <a href="#" class="btn btn-light text-danger"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                  <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <article class="pArt">
+          <div class="pCard">
+              <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6vRBWDk2BCApAJyKVBX2nEllZEhXzu9OnuH2Js3Ky9g&s"  alt="...">
+                <p>Naomi Bookshelf</p>
+              </div>
+          </div>
+          <div class="quantity">
+            <button class="minus" aria-label="Decrease">&minus;</button>
+            <input type="number" class="input-box" value="1" min="1" max="10">
+            <button class="plus" aria-label="Increase">&plus;</button>
+          </div>
+          <div class="price">
+            <div class="price-wrap lh-sm"> 
+              <p>R </p> 
+              <p>R </p> 
+            </div> <!-- price-wrap .// -->
+          </div>
+          <div class="remove">
+            <div class="float-lg-end">
+              <a href="#" class="btn btn-light text-danger"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                  <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <article class="pArt">
+          <div class="pCard">
+              <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6vRBWDk2BCApAJyKVBX2nEllZEhXzu9OnuH2Js3Ky9g&s"  alt="...">
+                <p>Naomi Bookshelf</p>
+              </div>
+          </div>
+          <div class="quantity">
+            <button class="minus" aria-label="Decrease">&minus;</button>
+            <input type="number" class="input-box" value="1" min="1" max="10">
+            <button class="plus" aria-label="Increase">&plus;</button>
+          </div>
+          <div class="price">
+            <div class="price-wrap lh-sm"> 
+              <p>R </p> 
+              <p>R </p> 
+            </div> <!-- price-wrap .// -->
+          </div>
+          <div class="remove">
+            <div class="float-lg-end">
+              <a href="#" class="btn btn-light text-danger"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                  <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <hr>
+        <a href="#" class="btn btn-dark w-50"> See More Products </a>
+      </div>
+    </div>
+  </div>
+    </div>
+  
+    <div class="col-md-4">
+      <div class="container cPay">
+        <!-- Order Summary section -->
+      
+      <hr>
+      <hr>
+      <aside class="oSum">
+        <div class="oCart">
+          <h3>Order Summary</h3>
+         </div>
+       <div class="card promoCard">
+         <div class="card-body">
+           <form>
+             <div class="form-group">
+               <label class="form-label">Promo Code</label>
+               <div class="input-group">
+                 <input type="text" class="form-control" name="" placeholder="Enter Promo Code">
+                 <button class="btn btn-dark">Apply Code</button>
+               </div>
+             </div>
+           </form>
+         </div>
+       </div> <!-- card.// -->
+      
+       <div class="card totalCard">
+       <div class="card-body">
+         <dl class="dlist-align">
+           <dt>Total Amount:</dt>
+           <dd class="text-end">R  </dd>
+         </dl>
+         <div class="d-grid gap-2 my-3">
+           <a href="#" class="btn btn-warning w-50"> Place Order </a>
+           <a href="#" class="btn btn-light w-50"> Cancel Order </a>
+         </div>
+       </div> 
+       </div> 
+      </aside> 
+      </div>
+    </div>
+  </div>
+ 
+
+
+<!-- Amount container -->
+
+
+</div>
+
+
+
+
