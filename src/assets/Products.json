@@ -1,0 +1,19 @@
+[
+    {
+        "id":"1",
+        "title":"....",
+        "price":"R 1200.00",
+        "category":"Chairs",
+        "description":"Comfy Chair",
+        "image":"assets/images/1000_F_423223088_K7LtjyVB6Ggvj2eXCYgH4wifwr567hjI.jpg"
+    },
+    
+    {
+        "id":"2",
+        "title":"...",
+        "price":"...",
+        "category":"...",
+        "description":"...",
+        "image":"..."
+    }
+]

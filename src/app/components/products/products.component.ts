@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ProductsService } from 'src/app/APIs/products.service';
 
 @Component({
   selector: 'app-products',
@@ -6,8 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent {
-  
-  constructor(){}
 
-  ngOninit(){}
+  constructor(private productsService: ProductsService ){}
+
+   Data: any[] = [];
+  
+  ngOnInit(){
+    this.productsService.getProducts().subscribe((response) => {
+      this.Data = response;
+      console.log(this.Data);
+    })
+  }
 }
