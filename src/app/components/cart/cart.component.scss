@@ -12,11 +12,12 @@
     justify-content: space-between;
     align-items: center;
     
+    
 }
 .cartDescrip{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
 }
 
@@ -32,7 +33,17 @@ img{
     
 }
 
-.price-wrap{
+.fprice{
     display: flex;
     justify-content: space-between;
+}
+
+.oSum{
+    margin-top: 12px;
+}
+
+h3{
+    justify-content: center;
+    display: flex;
+    align-items: center;
 }
