@@ -3,18 +3,17 @@
     <div class="container">
         <div class="left">
             <h3>Delivery Required</h3>
-            <h3>Delivery Address</h3>
-            <h3>Amount</h3>
-            <h3>Delivery Fee</h3>
-            <h3>Total Amount</h3>
-            <h3>Payment Method</h3>
+            <h3 class="Delivery">Delivery Address</h3>
+            <h3 style="margin-bottom: 30px;">Amount</h3>
+            <h3 style="margin-bottom: 30px;">Delivery Fee</h3>
+            <h3 style="margin-bottom: 30px;">Total Amount</h3>
+            <h3 style="margin-bottom: 30px;">Payment Method</h3>
 
         </div>
     <div class="right">
         <label class="switch">
-        
-            <input type="checkbox">
-            <span class="slider round"></span>
+        <input type="checkbox">
+        <span class="slider"></span>
         </label>
 
         <form class="address">
@@ -22,14 +21,22 @@
             <input type="text" name="inputField" >
             <input type="text" name="inputField">
        </form>
-            <h3>R4600.00</h3>
-            <h3>R630.00</h3>
-            <h3>R5230.00</h3>
+            <h3 style="margin-bottom: 30px;">R4600.00</h3>
+            <h3 style="margin-bottom: 30px;">R630.00</h3>
+            <h3 style="margin-bottom: 30px;">R5230.00</h3>
+        
+            <input type="radio" id="cash" name="method" value="cash">
+            <label for="cash" class="method-label">Cash</label>
 
-            <input type="radio" name="gender" value="male">Cash<br>
-            <input type="radio" name="gender" value="female">Card<br>    
-
+            <input type="radio" id="card" name="method" value="card"> 
+            <label for="card" class="method-label">Card</label>  
+       
     </div>
     
+    
+</div>
 
-    </div>
+    <button class="checkbtn">CheckOut</button>
+
+   
+   
