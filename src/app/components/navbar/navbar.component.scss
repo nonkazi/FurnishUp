@@ -44,3 +44,14 @@ ul {
 	/*Small smartphones [325px -> 425px]*/
   
 }
+.login-button{
+  background-color: rgb(16, 42, 160);
+  color:white;
+  padding: 8px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: 0.3 background-color;
+}
+.login-button:hover{
+  background-color: rgb(127, 180, 255);
+}
