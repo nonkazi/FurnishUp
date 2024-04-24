@@ -20,16 +20,14 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-
 }
 
-span{
+.item{
   float: left;
 }
 
- span a {
-  display: block;
+ .item a {
+  display: flex;
   color: white;
   text-align: left;
   padding: 14px 16px;
@@ -37,6 +35,6 @@ span{
 }
 
 /* Change the link color to #111 (black) on hover */
-span a:hover {
+.item a:hover {
   background-color: #111;
 }
