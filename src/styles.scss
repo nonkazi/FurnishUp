@@ -33,7 +33,7 @@
     text-decoration: line-through;
   }
   .current-price{
-    color: rgb(139, 222, 16);
+    color: rgb(11, 223, 11);
   }
   .sale-sticker {
     position: absolute;
@@ -44,3 +44,10 @@
     padding: 5px 10px;
     border-radius: 5px;
   }
+  .prices{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+  }
+  
