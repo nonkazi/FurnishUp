@@ -4,8 +4,7 @@
     font-family: "Roboto Condensed";
 }
 .container{
-    display: flex;
-    justify-content: space-between;
+    margin-top: 8px;
 }
 
 .cartHeading{
@@ -14,8 +13,6 @@
     align-items: center;
     
 }
-
-
 .cartDescrip{
     display: flex;
     flex-direction: row;
@@ -28,28 +25,14 @@ img{
     height: 110px;
 }
 
-p {
-    display: flex;
-    flex-direction: column;
-    
-    
-}
-
-.pCard{
-    width: 143px;
-}
-
-
-.cardCont{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
 
 .quantity{
-    color: black;
+    margin-top: 50px;
+    padding-right: 70px;
+    
+}
+
+.price-wrap{
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    overflow: hidden;
+    justify-content: space-between;
 }
