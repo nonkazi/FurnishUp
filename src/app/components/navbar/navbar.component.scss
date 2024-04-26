@@ -1,6 +1,7 @@
 $custom-color: #ff0000;
 
 /* Apply custom color to the navbar */
+
 .navbar{
  padding:3px;
  height: 100px;
@@ -9,7 +10,7 @@ $custom-color: #ff0000;
 .navbar img{
     margin: 10px;
     padding: 25px;
-    width:100px;
+    width:150px;
   
 }
 .item{
@@ -33,14 +34,20 @@ ul {
   padding: 14px 16px;
   text-decoration: none;
 }
-
 /* Change the link color to #111 (black) on hover */
+
 .item a:hover {
   background-color: #111;
 }
 
-
-@media only screen and (max-width: 561px){
-	/*Small smartphones [325px -> 425px]*/
-  
+.login-button{
+  background-color: rgb(16, 42, 160);
+  color:white;
+  padding: 8px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: 0.3 background-color;
+}
+.login-button:hover{
+  background-color: rgb(127, 180, 255);
 }
