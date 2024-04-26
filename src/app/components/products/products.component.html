@@ -1,9 +1,6 @@
 <app-navbar></app-navbar>
-
-
 <div class="container ppp">
-  <hr class="mt-5 ml-50"/>
-  <div class="row">
+  <div class="row grid">
     <div class="col-md-3"*ngFor="let product of products">
       <div class="card h-100">
         <img
@@ -15,8 +12,8 @@
         <div class="card-body">
           <h5 class="card-title">{{product.title}}</h5>
           <div class="prices">
-            <p class="card-text color-red Text-price">{{product.price2}}</p>
-            <p class="card-text current-price">{{product.price}}</p>
+            <p class="card-text color-red Text-price">R{{product.price2}}</p>
+            <p class="card-text current-price">R{{product.price}}</p>
           </div>
           <div class="button-cont">
             <button type="button" class="btn btn-primary btn-sm">

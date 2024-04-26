@@ -54,7 +54,7 @@ export class ProductsComponent {
       },
       {
         id:5,
-        title: 'ghhhg f',
+        title: 'chair 1',
         price2: 899.99,
         price: 1000.00,
         image: 'assets/images/1000_F_298830220_lHqS0oOJMOZ8F8ld7z7ZeAdZDv1Gt02U.jpg',
@@ -62,7 +62,7 @@ export class ProductsComponent {
       },
       {
         id:6,
-        title: 'hjjhk hg',
+        title: 'chair 2',
         price2: 799.99,
         price: 999.99,
         image: 'assets/images/1000_F_423223088_K7LtjyVB6Ggvj2eXCYgH4wifwr567hjI.jpg',
@@ -70,7 +70,7 @@ export class ProductsComponent {
       },
       {
         id:7,
-        title: 'fghjhj ghh',
+        title: 'chair 3',
         price2:1500.00,
         price: 899.00,
         image: 'assets/images/1000_F_533213230_cuXvqARkWeP1Tzb5uwiTvbiMA7fPrFJu.jpg',
@@ -78,10 +78,10 @@ export class ProductsComponent {
       },
       {
         id:8,
-        title: 'fghjbnm hg',
+        title: 'chair 4',
         price2:999.00,
         price: 699.99,
-        image: 'assets/images/1000_F_613074987_3vNNgy9UM3lhITDWcSAc5sA7C6Nb7wKq.jpg',
+        image: 'assets/images/240_F_552897399_yaVfQpVxq2I2KrfEYuewyM4KsQ0chpVm.jpg',
         category: 'furniture'
       },
       ];
