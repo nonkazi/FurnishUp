@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="container">
   <div class="row">
     <div class="col-lg-9">
@@ -15,16 +16,16 @@
             <li>Total Price</li>
         </ul>
         <!-- Products Articles -->
-        <article class="row gy-3 mb-4 pArt">
+        <div class="row gy-3 mb-4 pArt" *ngFor="let cart of carts">
           <div class="col-lg-5 pCard">
             <div class="card mb-3 product">
               <div class="row g-0">
                 <div class="col-md-4">
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6vRBWDk2BCApAJyKVBX2nEllZEhXzu9OnuH2Js3Ky9g&s"  alt="...">
+                  <img [src]="cart.image"  alt="...">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
-                    <p>Naomi Bookshelf</p>
+                    <p>{{cart.title}}</p>
                   </div>
                 </div>
               </div>
@@ -38,10 +39,10 @@
           </div>
           <!-- Price -->
           <div class="col-lg-2 col-sm-4 col-6  price">
-              <p class="fprice">R2 600.00 </p> 
+              <p class="fprice">{{cart.price}} </p> 
           </div>
           <div class="col-lg-2 col-sm-4 col-6">
-            <p class="fprice">R1 000.00 </p>
+            <p class="fprice">{{cart.price2}}</p>
           </div>
           <!-- Remove -->
           <div class="col-lg col-sm-4 remove">
@@ -54,8 +55,8 @@
               </a>
             </div>
           </div>
-        </article>
-        <article class="row gy-3 mb-4 pArt">
+        </div>
+        <div class="row gy-3 mb-4 pArt">
           <div class="col-lg-5 pCard">
             <div class="card mb-3 product">
               <div class="row g-0">
@@ -95,8 +96,8 @@
               </a>
             </div>
           </div>
-        </article>
-        <article class="row gy-3 mb-4 pArt">
+        </div>
+        <div class="row gy-3 mb-4 pArt">
           <div class="col-lg-5 pCard">
             <div class="card mb-3 product">
               <div class="row g-0">
@@ -133,8 +134,8 @@
               </a>
             </div>
           </div>
-        </article>
-        <a href="#" class="btn btn-warning sMore w-50"> See More Products </a>
+        </div>
+        <a href="#" class="btn btn-warning sMore w-50" routerLink="/product"> See More Products </a>
       </div>
     </div>
     
@@ -167,8 +168,8 @@
            <dd >R  </dd>
          </dl>
          <div class="d-grid gap-2 my-3">
-           <a href="#" class="btn btn-warning w-100"> Place Order </a>
-           <a href="#" class="btn btn-light w-100"> Cancel Order </a>
+           <a href="#" class="btn btn-warning w-100" routerLink="/checkout"> Place Order </a>
+           <a href="#" class="btn btn-light w-100" routerLink="/home"> Cancel Order </a>
          </div>
        </div> 
        </div> 
