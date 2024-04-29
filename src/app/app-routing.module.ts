@@ -1,28 +1,18 @@
 import { Component, NgModule } from '@angular/core';
 import { HomeComponent } from './components/home/home.component';
 import { ProductsComponent } from './components/products/products.component';
-import { ProductDetailComponent } from './components/product-detail/product-detail.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
-import { CartComponent } from './components/cart/cart.component';
-import { CheckoutComponent } from './components/checkout/checkout.component'
-import { RouterModule, Routes } from '@angular/router';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { registerComponent } from './components/register/register.component';
+import { loginComponent } from './components/login/login.component';
 
 
-
-
-const routes: Routes = [{path:'home',component:HomeComponent},
-{path:'',component: HomeComponent},
-{path:'home',component: HomeComponent},
-{path:'products',component:ProductsComponent},
+const routes: Routes = [
+{path:'home',component:HomeComponent},
+{path:'product',component:ProductsComponent},
 {path:'checkout',component:CheckoutComponent},
-  {path:'productdetais',component: ProductDetailComponent},
-  {path:'cart',component: CartComponent},
-  {path:'login',component: LoginComponent},
-  {path:'register',component: RegisterComponent},
-
-
-]
+{path:'register',component:registerComponent},
+{path:'login',component:loginComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
