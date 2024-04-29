@@ -57,7 +57,7 @@ export class ProductsComponent {
       },
       {
         id:5,
-        title: 'chair 1',
+        title: 'green Velvet',
         price2: 899.99,
         price: 1000.00,
         image: 'assets/images/1000_F_298830220_lHqS0oOJMOZ8F8ld7z7ZeAdZDv1Gt02U.jpg',
@@ -65,7 +65,7 @@ export class ProductsComponent {
       },
       {
         id:6,
-        title: 'chair 2',
+        title: 'Grey Mid',
         price2: 799.99,
         price: 999.99,
         image: 'assets/images/1000_F_423223088_K7LtjyVB6Ggvj2eXCYgH4wifwr567hjI.jpg',
@@ -73,7 +73,7 @@ export class ProductsComponent {
       },
       {
         id:7,
-        title: 'chair 3',
+        title: 'upholstered model',
         price2:1500.00,
         price: 899.00,
         image: 'assets/images/1000_F_533213230_cuXvqARkWeP1Tzb5uwiTvbiMA7fPrFJu.jpg',
@@ -81,7 +81,7 @@ export class ProductsComponent {
       },
       {
         id:8,
-        title: 'chair 4',
+        title: 'Tobacco Brown',
         price2:999.00,
         price: 699.99,
         image: 'assets/images/240_F_552897399_yaVfQpVxq2I2KrfEYuewyM4KsQ0chpVm.jpg',
