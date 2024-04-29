@@ -6,10 +6,12 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { CartComponent } from './components/cart/cart.component';
 
 
-const routes: Routes = [{path:'home',component:HomeComponent},
-{path:'product',component:ProductsComponent},
+const routes: Routes = [      
+{path:'',component: HomeComponent},
+{path:'home',component:HomeComponent},
+{path:'products',component:ProductsComponent},
 {path:'checkout',component:CheckoutComponent},
-{path: 'cart',component:CartComponent}
+{path: 'cart',component:CartComponent},
 ];
 
 @NgModule({

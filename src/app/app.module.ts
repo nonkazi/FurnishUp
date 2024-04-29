@@ -10,8 +10,8 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CartComponent } from './components/cart/cart.component';
-import { CheckoutComponent } from './components/checkout/checkout.component';
-import { HttpClientModule } from '@angular/common/http';
+import { CheckoutComponent } from './components/checkout/checkout.component'
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,18 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    RouterModule.forRoot([
+      {path:'',component: HomeComponent},
+      {path:'home',component: HomeComponent},
+      {path:'products',component: ProductsComponent},
+      {path:'checkout',component: CheckoutComponent},
+      {path:'productdetais',component: ProductDetailComponent},
+      {path:'cart',component: CartComponent},
+      {path:'login',component: LoginComponent},
+      {path:'register',component: RegisterComponent},
+
+
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
