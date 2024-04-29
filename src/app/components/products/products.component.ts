@@ -88,7 +88,7 @@ export class ProductsComponent {
 
       this.products = productData
   
-      this.productsService.addProduct(productData)
+      this.productsService.addProduct(this.products)
         .subscribe(response => {
           this.products = response;
           console.log(this.products)
