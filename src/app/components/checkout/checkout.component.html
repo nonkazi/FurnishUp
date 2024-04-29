@@ -1,5 +1,5 @@
 
-    <app-navbar></app-navbar>
+   
    <div class="container">
         <div class="left">
             <h3>Delivery Required</h3>
@@ -12,23 +12,23 @@
         </div>
     <div class="right">
         <label class="switch">
-        <input type="checkbox">
+        <input type="checkbox" [(ngModel)]="includeDelivery" (click)="toggleDelivery()">
         <span class="slider"></span>
         </label>
 
         <form class="address">
-            <input type="text" name="inputField" >
-            <input type="text" name="inputField" >
+            <input type="text" name="inputField"  [(ngModel)] = "address">
+            <input type="text" name="inputField">
             <input type="text" name="inputField">
        </form>
-            <h3 style="margin-bottom: 30px;">R4600.00</h3>
-            <h3 style="margin-bottom: 30px;">R630.00</h3>
-            <h3 style="margin-bottom: 30px;">R5230.00</h3>
+            <h3 style="margin-bottom: 30px;">R{{ totalFee }}</h3>
+            <h3 style="margin-bottom: 30px;">R{{ deliveryFee }}</h3>
+            <h3 style="margin-bottom: 30px;">R{{ totalPlusDelivery }}</h3>
         
-            <input type="radio" id="cash" name="method" value="cash">
+            <input type="radio" id="cash" name="method" value="cash" [(ngModel)]="selectedMethod" required="">
             <label for="cash" class="method-label">Cash</label>
 
-            <input type="radio" id="card" name="method" value="card"> 
+            <input type="radio" id="card" name="method" value="card" [(ngModel)]="selectedMethod" required=""> 
             <label for="card" class="method-label">Card</label>  
        
     </div>
@@ -36,7 +36,10 @@
     
 </div>
 
-    <button class="checkbtn">CheckOut</button>
+    <button class="checkbtn" (click)="checkout()" [disabled]="includeDelivery && !isAddressValid() || !selectedMethod">CheckOut</button>
+    <app-sucess *ngIf="successMessage" [orderNumber]="orderNumber"
+    [includeDelivery]="includeDelivery"></app-sucess>
+
 
    
    

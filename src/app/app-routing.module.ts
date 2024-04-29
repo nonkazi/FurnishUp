@@ -19,14 +19,11 @@ const Routes: Routes = [{path:'home',component:HomeComponent},
 {path:'checkout',component:CheckoutComponent},
   {path:'productdetais',component: ProductDetailComponent},
   {path:'cart',component: CartComponent},
-  {path:'login',component: loginComponent},
-  {path:'register',component: registerComponent}]
+  {path:'login',component: LoginComponent},
+  {path:'register',component: RegisterComponent},
 
 
-const routes: Routes = [{path:'home',component:HomeComponent},
-{path:'product',component:ProductsComponent},
-{path:'cart',component:CartComponent}
-];
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

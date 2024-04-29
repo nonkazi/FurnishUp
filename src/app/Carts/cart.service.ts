@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { requestFurnitureProducts } from '../interface/products';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -33,7 +34,14 @@ export class CartService {
       products.quantity = 1;
       this.cart.push(products);
     }
+    console.log(this.cart)
     this.cartItemCount.next(this.cartItemCount.value + 1);
   }
+
+  clearCart(){
+    this.cart = []
+    return this.cart
+  }
+
  
 }
