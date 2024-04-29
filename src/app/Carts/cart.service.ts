@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { requestFurnitureProducts } from '../interface/products';
 
 @Injectable({
   providedIn: 'root'
@@ -21,19 +21,14 @@ export class CartService {
     return this.cartItemCount
   }
 
-  addTocart(products:any){
-    let added = false;
-      this.cart.forEach((item)=> {
-        item.id === products.id
-        item.quantity += 1;
-        added = !added;
-      });
-       
-    if (!added) {
-      products.quantity = 1;
-      this.cart.push(products);
-    }
-    this.cartItemCount.next(this.cartItemCount.value + 1);
+  addTocart( product: requestFurnitureProducts){
+    return this.cart.push(product)
   }
- 
+
+  clearCart(){
+    this.cart = []
+    return this.cart
+  }
+
+  constructor() { }
 }
