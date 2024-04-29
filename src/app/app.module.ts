@@ -12,6 +12,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component'
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SucessComponent } from './components/sucess/sucess.component';
+import { CheckoutService } from './services/checkout/checkout.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,15 +27,16 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     CartComponent,
     CheckoutComponent,
+    SucessComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
-   
+    HttpClientModule,
+   FormsModule
   ],
-  providers: [],
+  providers: [CheckoutService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
