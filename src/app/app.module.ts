@@ -10,7 +10,7 @@ import { registerComponent } from './components/register/register.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component'
 import { RouterModule } from '@angular/router';
-import { FormsModule, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { loginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -33,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+
     RouterModule.forRoot([
       {path:'',component: HomeComponent},
       {path:'home',component: HomeComponent},
