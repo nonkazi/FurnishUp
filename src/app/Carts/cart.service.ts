@@ -38,3 +38,6 @@ export class CartService {
     this.cartItemCount.next(this.cartItemCount.value + 1);
   }
 }
+
+ 
+}

@@ -33,7 +33,7 @@ import { loginComponent } from './components/login/login.component';
   
    
   ],
-  providers: [],
+  providers: [CheckoutService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
