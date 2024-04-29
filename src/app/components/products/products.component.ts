@@ -94,6 +94,7 @@ export class ProductsComponent {
       this.productsService.postProduct(productData)
         .subscribe(response => {
           this.products = productData;
+          console.log(this.products)
         });
     }
 
