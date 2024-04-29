@@ -7,8 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
+import { loginComponent } from './components/login/login.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -20,8 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     ProductsComponent,
     ProductDetailComponent,
-    LoginComponent,
-    RegisterComponent,
+    loginComponent,
+  
     CartComponent,
     CheckoutComponent,
 
