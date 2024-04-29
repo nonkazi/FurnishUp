@@ -11,7 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component'
-import { RouterModule } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,18 +29,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot([
-      {path:'',component: HomeComponent},
-      {path:'home',component: HomeComponent},
-      {path:'products',component: ProductsComponent},
-      {path:'checkout',component: CheckoutComponent},
-      {path:'productdetais',component: ProductDetailComponent},
-      {path:'cart',component: CartComponent},
-      {path:'login',component: LoginComponent},
-      {path:'register',component: RegisterComponent},
-
-
-    ]),
+    HttpClientModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
