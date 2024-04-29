@@ -9,8 +9,8 @@ import { ProductsComponent } from './components/products/products.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { loginComponent } from './components/login/login.component';
 import { CartComponent } from './components/cart/cart.component';
-import { CheckoutComponent } from './components/checkout/checkout.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { CheckoutComponent } from './components/checkout/checkout.component'
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,18 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    RouterModule.forRoot([
+      {path:'',component: HomeComponent},
+      {path:'home',component: HomeComponent},
+      {path:'products',component: ProductsComponent},
+      {path:'checkout',component: CheckoutComponent},
+      {path:'productdetais',component: ProductDetailComponent},
+      {path:'cart',component: CartComponent},
+      {path:'login',component: LoginComponent},
+      {path:'register',component: RegisterComponent},
+
+
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
