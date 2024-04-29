@@ -33,9 +33,9 @@
           </div>
           <!-- Quantity -->
           <div class="col-auto quantity">
-            <button class="minus" aria-label="Decrease">&minus;</button>
+            <button class="minus"  (click)="moreToCart(product)" aria-label="Decrease">&minus;</button>
             <input type="number" class="input-box" value="1" min="1" max="10">
-            <button class="plus" aria-label="Increase">&plus;</button>
+            <button class="plus" (click)="moreToCart(product)" aria-label="Increase">&plus;</button>
           </div>
           <!-- Price -->
           <div class="col-lg-2 col-sm-4 col-6  price">

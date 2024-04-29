@@ -91,15 +91,6 @@ export class CartComponent implements OnInit {
             });
       }
 
-    
-
- moreToCart(products: any){
-  if(!this.productservice.addProduct(products)) {
-    products.quantity =1;
-    this.productservice.addProduct(products);
-    this.subTotal = products.price;
-  }
- }
 
  //Remove a Product from Cart
  removeFromCart(product: any) {
