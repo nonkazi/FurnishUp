@@ -19,14 +19,14 @@ const Routes: Routes = [{path:'home',component:HomeComponent},
 {path:'checkout',component:CheckoutComponent},
   {path:'productdetais',component: ProductDetailComponent},
   {path:'cart',component: CartComponent},
-  {path:'login',component: LoginComponent},
-  {path:'register',component: RegisterComponent},
+  {path:'login',component: loginComponent},
+  {path:'register',component: registerComponent},
 
 
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(Routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
