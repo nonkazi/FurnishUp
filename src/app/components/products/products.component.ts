@@ -1,6 +1,7 @@
-import { identifierName } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ProductsService } from 'src/app/APIs/products.service';
+import { CartService } from 'src/app/Carts/cart.service';
+
 
 @Component({
   selector: 'app-products',
@@ -8,14 +9,16 @@ import { ProductsService } from 'src/app/APIs/products.service';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent {
+  
 
-  constructor(private productsService: ProductsService ){}
+  constructor(private productsService: ProductsService, private cartService:CartService ){}
 
-  products: any;
+  products: any[] = [];
     
 
-  ngOnInit() {
+  ngOnInit():void {
     this.addProduct();
+    
   }
 
   
@@ -89,11 +92,17 @@ export class ProductsComponent {
       this.products = productData
   
       this.productsService.addProduct(productData)
-        .subscribe(response => {
-          this.products = response;
+        .subscribe((response: any) => {
+          this.products = productData;
           console.log(this.products)
-          
         });
     }
+
+    addToCart(product: any) {
+      this.cartService.addTocart(product);
+    }
+
+   
+    
   }
 
