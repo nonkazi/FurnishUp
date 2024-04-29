@@ -10,7 +10,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CartComponent } from './components/cart/cart.component';
-import { CheckoutComponent } from './components/checkout/checkout.component';
+import { CheckoutComponent } from './components/checkout/checkout.component'
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({

@@ -91,7 +91,7 @@ export class ProductsComponent {
 
       this.products = productData
   
-      this.productsService.addProduct(productData)
+      this.productsService.postProduct(productData)
         .subscribe(response => {
           this.products = productData;
           console.log(this.products)
