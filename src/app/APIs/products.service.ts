@@ -9,6 +9,7 @@ import { products } from '../interface/products';
 })
 export class ProductsService {
 
+  products : any[] =[]
 
   private apiUrl = 'https://fakestoreapi.com/products';
 
@@ -19,8 +20,9 @@ export class ProductsService {
     return this.http.post<any>(this.apiUrl, productData);
   }
 
-  removeProduct(productId: number): Observable<any>{
+  removeProduct(productId: number){
     return this.http.delete<any>(`https://fakestoreapi.com/products/${productId}`);
+
   }
   
 }
