@@ -35,5 +35,11 @@ export class CartService {
     }
     this.cartItemCount.next(this.cartItemCount.value + 1);
   }
+
+  
+
+  getTotal() {
+    return this.cart.reduce((total, item) => total + item.price, 0);
+  }
  
 }

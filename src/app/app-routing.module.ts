@@ -4,6 +4,8 @@ import { ProductsComponent } from './components/products/products.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { registerComponent } from './components/register/register.component';
 import { loginComponent } from './components/login/login.component';
+import { RouterModule,Routes } from '@angular/router';
+
 
 
 const routes: Routes = [
