@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { HomeComponent } from './components/home/home.component';
 import { ProductsComponent } from './components/products/products.component';
+<<<<<<< HEAD
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { loginComponent} from './components/login/login.component';
 import { registerComponent } from './components/register/register.component';
@@ -24,6 +25,15 @@ const routes: Routes = [{path:'home',component:HomeComponent},
 
 
 ]
+=======
+import { CartComponent } from './components/cart/cart.component';
+
+
+const routes: Routes = [{path:'home',component:HomeComponent},
+{path:'product',component:ProductsComponent},
+{path:'cart',component:CartComponent}
+];
+>>>>>>> c8863e74f38ffd3e7b33dbdbaad12e2a2e7533fd
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
