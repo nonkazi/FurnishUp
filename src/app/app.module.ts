@@ -6,7 +6,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
-<<<<<<< HEAD
 import { registerComponent } from './components/register/register.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component'
@@ -15,11 +14,6 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { loginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 
-=======
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
-import { CartComponent } from './components/cart/cart.component'
->>>>>>> c8863e74f38ffd3e7b33dbdbaad12e2a2e7533fd
 
 @NgModule({
   declarations: [
@@ -28,15 +22,9 @@ import { CartComponent } from './components/cart/cart.component'
     HomeComponent,
     ProductsComponent,
     ProductDetailComponent,
-<<<<<<< HEAD
     loginComponent,
     CartComponent,
     CheckoutComponent,
-=======
-    LoginComponent,
-    RegisterComponent,
-    CartComponent
->>>>>>> c8863e74f38ffd3e7b33dbdbaad12e2a2e7533fd
 
   ],
   imports: [
