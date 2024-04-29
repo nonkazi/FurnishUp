@@ -33,6 +33,7 @@ export class CartService {
       products.quantity = 1;
       this.cart.push(products);
     }
+    console.log(this.cart)
     this.cartItemCount.next(this.cartItemCount.value + 1);
   }
 
@@ -41,5 +42,11 @@ export class CartService {
   getTotal() {
     return this.cart.reduce((total, item) => total + item.price, 0);
   }
+
+  clearCart(){
+    this.cart = []
+    return this.cart
+  }
+
  
 }

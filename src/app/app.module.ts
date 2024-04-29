@@ -9,11 +9,11 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { registerComponent } from './components/register/register.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component'
-import { RouterModule } from '@angular/router';
-import { FormsModule, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {  HttpClientModule } from '@angular/common/http';
+import { SucessComponent } from './components/sucess/sucess.component';
+import { CheckoutService } from './services/checkout/checkout.service';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { loginComponent } from './components/login/login.component';
-import { HttpClientModule } from '@angular/common/http';
-
 
 @NgModule({
   declarations: [
@@ -22,31 +22,21 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     ProductsComponent,
     ProductDetailComponent,
+    registerComponent,
     loginComponent,
     CartComponent,
     CheckoutComponent,
+    SucessComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      {path:'',component: HomeComponent},
-      {path:'home',component: HomeComponent},
-      {path:'products',component: ProductsComponent},
-      {path:'checkout',component: CheckoutComponent},
-      {path:'productdetais',component: ProductDetailComponent},
-      {path:'cart',component: CartComponent},
-      {path:'login',component: loginComponent},
-      {path:'register',component: registerComponent},
-
-
-    ]),
+   FormsModule
   ],
-  providers: [],
+  providers: [CheckoutService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
