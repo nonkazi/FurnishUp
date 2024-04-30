@@ -12,14 +12,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [{path:'home',component:HomeComponent},
-{path:'',component: HomeComponent},
 {path:'home',component: HomeComponent},
 {path:'products',component:ProductsComponent},
+{path:'product/:id',component: ProductDetailComponent},
 {path:'checkout',component:CheckoutComponent},
-  {path:'productdetais',component: ProductDetailComponent},
-  {path:'cart',component: CartComponent},
-  {path:'login',component: loginComponent},
-  {path:'register',component: registerComponent},
+{path:'cart',component: CartComponent},
+{path:'login',component: loginComponent},
+{path:'register',component: registerComponent},
+{path:'',component: HomeComponent},
 
 
 ]

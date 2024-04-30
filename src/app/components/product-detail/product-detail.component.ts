@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap, Params} from '@angular/router';
 import { ProductsService } from 'src/app/APIs/products.service';
-
+import { } from '../products/products.component'
+import { CartService } from 'src/app/Carts/cart.service';
 
 
 @Component({
@@ -8,17 +10,27 @@ import { ProductsService } from 'src/app/APIs/products.service';
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.scss']
 })
-export class ProductDetailComponent {
+export class ProductDetailComponent implements OnInit{
+  productId: any;
 
+  constructor(private activatedRoute: ActivatedRoute, private productsService: ProductsService, private cartService: CartService){
 
-  products: any[] = [];
-  constructor(private productservice: ProductsService){
   }
-  // ngOnInit(): void {
-  //   this.productservice.addProduct().subscribe(response =>{
-  //     this.products = response;
-  //     console.log(this.products)
-  //   })
-  // }
+  product:any;
+  ngOnInit(): void {
+
+     this.activatedRoute.paramMap.subscribe((params: ParamMap) =>{
+      this.productsService.getProduct(+params.get('id')!).subscribe((response: any)=>{
+        this.product = response;
+        console.log(this.product)
+      })
+     })
+    //  this.activatedRoute.paramMap.subscribe((params: ParamMap)=>{
+    //  this.productsService.getProductById(+params.get('id')!).subscribe((response: any)=>{
+    //     console.log(response);
+    //   })
+     //})
+
+  }
 
 }

@@ -4,26 +4,29 @@
   <div class="row grid">
     <div class="col-md-3"*ngFor="let product of products" routerLink="/productDetails">
       <div class="card h-100">
-        <img
-          [src]="product.image"
-          class="card-img-top img-fluid"
-          alt="Product 1"
-        />
+        <a [title]="product.name + ' details'" [routerLink]="['/products', product.id]">
+          <img
+            [src]="product.image"
+            class="card-img-top img-fluid"
+            alt="Product 1"
+          />
+          </a>
         <span class="sale-sticker">SALE</span>
         <div class="card-body">
         <h5 class="card-title">{{product.title}}</h5>
           <div class="prices">
             <p class="card-text color-red Text-price">R{{product.price2}}</p>
             <p class="card-text current-price">R{{product.price}}</p>
+            <a [routerLink]="['/product', product.id]">{{ product.name }}</a>
           </div>
+          <h3><a [title]="product.name + ' details'" [routerLink]="['/product', product.id]"> {{ product.name }}</a></h3>
           <div class="button-cont">
             <button type="button" class="btn btn-primary btn-sm" (click)="addToCart(product)">
               Add to Cart
             </button>
-            <button type="button" class="btn btn-primary btn-sm"[routerLink]="['/product', product.id]">View</button>
+            <button type="button" class="btn btn-primary btn-sm" [routerLink]="['/product', product.id]">View</button>
           </div>
         </div>
-      </div>
     </div>
   </div>
 </div>
