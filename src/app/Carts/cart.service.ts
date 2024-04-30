@@ -1,19 +1,26 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { ShoppingCart, cItems } from '../interface/shoppingCart';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
   
-  private cart: any[] = []
+  cart: any[] = []
 
   private cartItemCount = new BehaviorSubject<number>(0) 
+
+  constructor( private http : HttpClient){}
   
-
-  constructor() { }
-
+ 
   getCart(){
+    //return this.cart
+    return this.http.get('');
+  }
+
+  getProduct(){
     return this.cart
   }
 
@@ -21,6 +28,7 @@ export class CartService {
     return this.cartItemCount
   }
 
+  // ADD TO CART BUTTON
   addTocart(products:any){
     let added = false;
       this.cart.forEach((item)=> {
@@ -38,14 +46,34 @@ export class CartService {
   }
 
   
+  addToCart(addedProduct: any) {
+    this.cart.push(addedProduct);
+    this.saveCart();
+  }
 
-  getTotal() {
-    return this.cart.reduce((total, item) => total + item.price, 0);
+  loadCart(): void {
+    this.cart = JSON.parse(localStorage.getItem('cItems') as any) || [];
+  }
+  
+  saveCart(): void {
+    localStorage.setItem('cItems', JSON.stringify(this.cart))
+  }
+
+  productInCart(product: any): boolean {
+    return this.cart.findIndex((x: any) => x.id === product.id) > -1;
+  }
+
+  removeProduct(product: any) {
+    const index = this.cart.findIndex((x: any) => x.id === product.id);
+
+    if (index > -1) {
+      this.cart.splice(index, 1);
+      this.saveCart();
+    }
   }
 
   clearCart(){
-    this.cart = []
-    return this.cart
+    localStorage.clear()
   }
 
  

@@ -25,7 +25,7 @@
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
-                    <p>{{product.title}}</p>
+                    <p>{{product.itemName}}</p>
                   </div>
                 </div>
               </div>
@@ -39,10 +39,10 @@
           </div>
           <!-- Price -->
           <div class="col-lg-2 col-sm-4 col-6  price">
-              <p class="fprice">{{product.price2}} </p> 
+              <p class="fprice">{{product.fullprice}} </p> 
           </div>
           <div class="col-lg-2 col-sm-4 col-6">
-            <p class="fprice">{{product.price}}</p>
+            <p class="fprice">{{product.saleprice }}</p>
           </div>
           <!-- Remove -->
           <div class="col-lg col-sm-4 remove">
@@ -86,7 +86,7 @@
        <div class="card-body">
          <dl class="dlist-align">
            <dt>Total Amount:</dt>
-           <dd >R {{subTotal}} </dd>
+           <dd >R {{total}} </dd>
          </dl>
          <div class="d-grid gap-2 my-3">
            <a href="#" class="btn btn-warning w-100" routerLink="/checkout"> Place Order </a>
