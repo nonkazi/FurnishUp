@@ -10,12 +10,12 @@ import { Router } from '@angular/router';
 })
 
   export class loginComponent {
-    public loginForm !:FormGroup
+    public LoginForm !:FormGroup
     constructor(private formbuilder:FormBuilder, private http: HttpClient, private router:Router){}
   
     ngOnInit():void
     {
-      this.loginForm = this.formbuilder.group({
+      this.LoginForm = this.formbuilder.group({
         email: [''],
         password: ['', Validators.required]
       })}
@@ -25,14 +25,14 @@ import { Router } from '@angular/router';
         this.http.get<any>("http://localhost:3000/registerUsersList").subscribe(res=>{
           const user = res.find((details:any)=>
           {
-            return details.email === this.loginForm.value.email && details.password === this.loginForm.value.password;
+            return details.email === this.LoginForm.value.email && details.password === this.LoginForm.value.password;
           });
-          console.log(this.loginForm);
+          console.log(this.LoginForm);
           
           if(user)
           {
             alert('Successfully Logged in');
-            this.loginForm.reset();
+            this.LoginForm.reset();
             this.router.navigate(["/home"])
           }
           else

@@ -1,12 +1,8 @@
-export interface FurnitureProducts {
+export interface products{
     id: number;
     title: string;
     price2: number;
-    price: number;
+    price: string;
     image: string;
-    category: string;
-}
-
-export interface requestFurnitureProducts{
-    items: FurnitureProducts[];
+    category: string
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { ProductsService } from 'src/app/APIs/products.service';
 import { CartService } from 'src/app/Carts/cart.service';
 import { ShoppingCart } from 'src/app/interface/shoppingCart';
@@ -11,58 +11,65 @@ import { ShoppingCart } from 'src/app/interface/shoppingCart';
 })
 export class CartComponent implements OnInit {
   
-  productList!: any[];
   products: any[] = [];
-  subTotal!: any;
+  subTotal: any = 0;
+  cart!: ShoppingCart[];
 
   constructor(private productservice: ProductsService, private cartService: CartService) {}
 
  ngOnInit(): void {
-  this.cartService.getCart().subscribe({
-    next: (res: any) => {
-      console.log(res);
-      this.productList = res;
+    this.subTotal = this.cartService.getTotalPrice(); 
+    this.products = this.cartService.getCart();
     }
-  });
 
-    this.cartService.loadCart();
-    this.products = this.cartService.getProduct();
+    deleteProduct(id: number) : void {
 
-      // // this.products = this.cartService.getCart();
-      // this.calculateTotal();
+      this.productservice.deleteProduct(id).subscribe(()=>{
+        console.log("delete successful")
+      })
+    }
+    
+    incrementQ( products : any){
+      products.quantity++
+    }
+
+    addToCart(product: any) {
+    this.products.push(product)
       }
 
-
-      // calculateTotal() {
-      //   this.subTotal = this.cartService.getTotal();
-      // }
-
-      addToCart(product: any) {
-        if (!this.cartService.productInCart(product)) {
-          product.quantity = 1;
-          this.cartService.addToCart(product);
-          this.products = [...this.cartService.getProduct()];
-          this.subTotal = product.price;
-        }
+      getCart(){
+        return this.products
       }
 
  //Remove a Product from Cart
  removeFromCart(product: any) {
-  this.cartService.removeProduct(product);
-  this.products = this.productservice.getProduct();
+  this.cartService.removeCartData(product);
 }
-
-get total(){
-  return this.products?.reduce(
-    (sum, product) => ({
-      quantity: 1,
-      price: sum.price + product.quantity * product.price,
-    }),
-    { quantity: 1, price: 0 }
-  ).price;
-}
-
 
   
 }
 
+
+// ########### ON HOLD CODE ##############
+ // if (!this.cartService.productInCart(product)) {
+        //   product.quantity = 1;
+        //   this.cartService.addToCart(product);
+        //   this.products = [...this.cartService.getProduct()];
+        //   this.subTotal = product.price;
+        // }
+
+// get total(){
+//   return this.products?.reduce(
+//     (sum, product) => ({
+//       quantity: 1,
+//       price: sum.price + product.quantity * product.price,
+//     }),
+//     { quantity: 1, price: 0 }
+//   ).price;
+// }
+
+// this.cartService.getProductData() 
+  //   .subscribe(res=>{ 
+  //   this.products = res;
+  //  
+  //   })
