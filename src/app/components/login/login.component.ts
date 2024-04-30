@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,12 @@ import { Router } from '@angular/router';
 
   export class loginComponent {
     public LoginForm !:FormGroup
-    constructor(private formbuilder:FormBuilder, private http: HttpClient, private router:Router){}
+    @Output() public isLoggedIn: boolean = false;
+    
+
+    constructor(private formbuilder:FormBuilder, 
+      private http: HttpClient,
+       private router:Router){}
   
     ngOnInit():void
     {
@@ -23,7 +29,7 @@ import { Router } from '@angular/router';
       login()
       {
         this.http.get<any>("http://localhost:3000/registerUsersList/").subscribe(res=>{
-          const user = res.find((details:any)=>
+           const user = res.find((details:any)=>
           {
             return details.email === this.LoginForm.value.email && details.password === this.LoginForm.value.password;
           });
@@ -32,7 +38,8 @@ import { Router } from '@angular/router';
           if(user)
           {
             alert('Successfully Logged in');
-            this.LoginForm.reset();
+            this.isLoggedIn = true;
+            
             this.router.navigate(["/home"])
           }
           else
@@ -43,6 +50,10 @@ import { Router } from '@angular/router';
         {
           alert("Something went wrong");
         })
-      
-  }}
+      }
+
+         
+  }
+
+
 

@@ -1,14 +1,14 @@
 {
     "registerUsersList": [
         {
-          "id": "",
+          "id": 1,
           "email": "mphotsatsi@gmail.com",
-          "password": "2024@mpho"
+          "password": "123"
         },
         {
-          "id" : "",
+          "id" : 2,
           "email": "leagodave@gmail.com",
-          "password": "bye@1234"
+          "password": "123"
         }
       ]
     }
