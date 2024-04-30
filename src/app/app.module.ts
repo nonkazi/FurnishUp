@@ -11,9 +11,9 @@ import { SucessComponent } from './components/sucess/sucess.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component'
 import {  HttpClientModule } from '@angular/common/http';
-import { loginComponent } from './components/login/login.component';
 import { CheckoutService } from './services/checkout/checkout.service';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { loginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +22,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     ProductsComponent,
     ProductDetailComponent,
+    registerComponent,
     loginComponent,
     registerComponent,
     CartComponent,
@@ -34,10 +35,9 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule,
-    FormsModule,ReactiveFormsModule
-  
-   
+   FormsModule
   ],
   providers: [CheckoutService],
   bootstrap: [AppComponent]
