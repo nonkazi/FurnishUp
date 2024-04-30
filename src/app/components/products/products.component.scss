@@ -20,9 +20,14 @@
     justify-content: space-between;
     align-items: start;
   }
-.grid{
+  .grid{
   row-gap: 15px;
-}
-.space{
-  padding-top: 110px;
-}
+  }
+  .space {
+    padding-top: 10px;
+  }
+  .button-cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }

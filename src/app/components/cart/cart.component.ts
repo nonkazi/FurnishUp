@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/APIs/products.service';
+import { CartService } from 'src/app/Carts/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -9,13 +10,15 @@ import { ProductsService } from 'src/app/APIs/products.service';
 export class CartComponent implements OnInit {
   
   products: any[] = [];
-  subTotal!: any;
+  subTotal: number = 0;
 
 
-  constructor(private productservice: ProductsService) {}
+  constructor(private productservice: ProductsService, private cartService: CartService) {}
 
  ngOnInit(): void {
       this.addProduct()
+      this.products = this.cartService.getCart();
+      this.calculateTotal();
       }
 
       addProduct() {
@@ -85,27 +88,21 @@ export class CartComponent implements OnInit {
         },
         ];
 
-      this.productservice.addProduct(productData).subscribe((response: any) => {
+      this.productservice.postProduct(productData).subscribe((response: any) => {
         this.products = productData;
               console.log(this.products)
             });
       }
 
-    
-
- moreToCart(products: any){
-  if(!this.productservice.addProduct(products)) {
-    products.quantity =1;
-    this.productservice.addProduct(products);
-    this.subTotal = products.price;
-  }
- }
+      calculateTotal() {
+        this.subTotal = this.cartService.getTotal();
+      }
 
  //Remove a Product from Cart
- removeFromCart(product: any) {
-  this.productservice.removeProduct(product);
-  this.products = this.productservice.getProduct();
-}
+//  removeFromCart(product: any) {
+//   this.productservice.removeProduct(product);
+//   this.products = this.productservice.getProduct();
+// }
  
 get total() {
   return this.products?.reduce(
@@ -116,6 +113,9 @@ get total() {
     { quantity: 1, price: 0 }
   ).price;
 }
+
+
+
   
 }
 

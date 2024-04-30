@@ -32,7 +32,9 @@ import { Router } from '@angular/router';
            const user = res.find((details:any)=>
           {
             return details.email === this.LoginForm.value.email && details.password === this.LoginForm.value.password;
+            return details.email === this.LoginForm.value.email && details.password === this.LoginForm.value.password;
           });
+          console.log(this.LoginForm);
           console.log(this.LoginForm);
           
           if(user)

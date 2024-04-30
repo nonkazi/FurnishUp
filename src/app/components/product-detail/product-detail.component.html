@@ -1,73 +1,99 @@
-<div class="container ">
-        <div class="row mb-5">
-            <div class="col-md-8">
-                <img src="assets/images/BED1.jpeg" class="img-fluid mt-5 rounded-9" alt="...">
-            </div>
-            <div class="col-md-4">
-                <div class="card mt-5" >
-                    <div class="card-body" style="background-color: #FFBF69;">
-                      <h4 class="card-title">Full Price</h4>
-                      <h5 class="card-text text-center">R100000</h5>
-                    </div>
-                  </div>
-                  <div class="card mt-1">
-                    <div class="card-body product_card">
-                      <h4 class="card-title">Card title</h4>
-                      <p >Some example text. Some example text.</p>
-                    </div>
-                  </div>
-
-                  <div class="card mt-1">
-                    <button type="button" class="btn btn-primary" style="background-color: #219EBC;">Add to Cart</button>
-                  </div>
-                  <div class="card mt-1 mb-5">
-                    <div class="card-body product_card">
-                      <h4 class="card-title">Card title</h4>
-                      <p class="card-text">Some example text. Some example text.</p>
-                    </div>
-                  </div>
-            </div>    
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row mb-5">
+    <div class="col-md-8" *ngFor="let item of product">
+      <img
+        [src]="item.image"
+        class="img-fluid mt-5 rounded-9"
+        alt="..."
+      />
+    </div>
+    <div class="col-md-4" *ngFor="let item of product">
+      <div class="card mt-5">
+        <div class="card-body" style="background-color: #ffbf69">
+          <h4 class="card-title">Full Price</h4>
+          <h5 class="card-text text-center">{{item.price}}</h5>
         </div>
-  </div>
-
-  <div class="container mb-2 mt-5">
-    <div class="row">
-        <div class="col-md-6">
-            <div>
-                <a href="#" ><h3> Related Products</h3> </a>
-            </div>
+      </div>
+      <div class="card mt-1">
+        <div class="card-body product_card">
+          <h4 class="card-title">Card title</h4>
+          <p>Some example text. Some example text.</p>
         </div>
-        <div class="col-md-6">
-            <div class="text-left">
-                <a href="#" ><h3> View More Products</h3> </a>
-            </div>
+      </div>
+
+      <div class="card mt-1">
+        <button
+          type="button"
+          class="btn btn-primary"
+          style="background-color: #219ebc"
+        >
+          Add to Cart
+        </button>
+        <!-- <button type="button" class="btn btn-primary btn-sm" (click)="addToCart(product)">
+                      Add to Cart
+                    </button> -->
+      </div>
+      <div class="card mt-1 mb-5">
+        <div class="card-body product_card">
+          <h4 class="card-title">Card title</h4>
+          <p class="card-text" *ngFor="let item of product">
+            <p>{{item.description}}</p>
+            
         </div>
-
-
+      </div>
     </div>
   </div>
+</div>
 
-  <div class="container" id="related-products">
-    <div class="row grid gap-3">
-        <div class="col">
-            <div class="card">
-                <img src="assets/images/BED1.jpeg" class="card-img-top img-fluid text-center " alt="...">
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img src="assets/images/furnish.jpeg" class="card-img-top img-fluid " alt="...">
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img src="assets/images/furnish.jpeg" class="card-img-top img-fluid " alt="...">
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img src="assets/images/BED2.jpeg" class="card-img-top" alt="...">
-            </div>
-        </div>
+<div class="container mb-2 mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <div>
+        <a href="#"><h3>Related Products</h3> </a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="text-left">
+        <a href="#"><h3>View More Products</h3> </a>
+      </div>
     </div>
   </div>
+</div>
+
+<div class="container" id="related-products">
+  <div class="row grid gap-3">
+    <div class="col">
+      <div class="card">
+        <img
+          src="assets/images/BED1.jpeg"
+          class="card-img-top img-fluid text-center"
+          alt="..."
+        />
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img
+          src="assets/images/furnish.jpeg"
+          class="card-img-top img-fluid"
+          alt="..."
+        />
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img
+          src="assets/images/furnish.jpeg"
+          class="card-img-top img-fluid"
+          alt="..."
+        />
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="assets/images/BED2.jpeg" class="card-img-top" alt="..." />
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,11 +7,11 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { registerComponent } from './components/register/register.component';
-import { loginComponent } from './components/login/login.component';
+import { SucessComponent } from './components/sucess/sucess.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component'
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { SucessComponent } from './components/sucess/sucess.component';
+import {  HttpClientModule } from '@angular/common/http';
+import { loginComponent } from './components/login/login.component';
 import { CheckoutService } from './services/checkout/checkout.service';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
@@ -26,15 +26,18 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     registerComponent,
     CartComponent,
     CheckoutComponent,
-    SucessComponent,
+    registerComponent,
+    SucessComponent
+  
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-   FormsModule,
-   ReactiveFormsModule
+    FormsModule,ReactiveFormsModule
+  
+   
   ],
   providers: [CheckoutService],
   bootstrap: [AppComponent]
