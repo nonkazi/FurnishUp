@@ -20,9 +20,9 @@ import { Router } from '@angular/router';
        private router:Router){}
   
     ngOnInit():void
-    {
+    {// this is the formcontrol as it hold both the data value and the valitator
       this.LoginForm = this.formbuilder.group({
-        email: [''],
+        email: ['',Validators.required],
         password: ['', Validators.required]
       })}
   

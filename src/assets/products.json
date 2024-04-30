@@ -1,0 +1,43 @@
+[
+    {
+        "id":1,
+        "title":"Madrid 2 Piece",
+        "price":"R10000",
+        "category":"Bedding",
+        "description":"High-count bonnel spring-unit system - for maximum support and comfort.",
+        "image":"/assets/images/Madrid 2 Piece.jpeg"
+    },
+    {
+        "id": 3,
+        "title": "PARKER 4-PIECE",
+        "price": "80000",
+        "category":"Lounge Suite",
+        "description":"Upholstered in a mortel suede and printed suede fabric - smooth surface with a leather resemblance",
+        "image":"/assets/images/PARKER 4-PIECE.jpeg"
+    },
+    {
+        "id": 5,
+        "title": "CARLA 2-PIECE",
+        "price": "R6000",
+        "category":"Headboard is upholstered in a PU fabric with foam padding - this adds to the style and comfort of the headboard ",
+        "description":" ",
+        "image":"/assets/images/CARLA 2-PIECE.jpeg"
+    },
+    {
+        "id": 8,
+        "title": "CHICAGO SLEIGH BED MK2",
+        "price": "R15000",
+        "category":"Bedroom Suites",
+        "description":"Deep-buttoned headboard and foot-end - luxurious comfort and style Chain-stud detail on scrolls of headboard and foot-end - outline the dimensions for a modern floating appearance",
+        "image":"/assets/images/CHICAGO SLEIGH BED MK2.jpeg" 
+    },
+    {
+        "id": 5,
+        "title": "ELIZABETH 2-PIECE - IMBUIA",
+        "price": "R50000",
+        "category":"Bedroom Suites",
+        "description":"Detailed carvings across headboard and mirror, with similar designs on doors and handles - consistent design is eye catching with added style",
+        "image":"/assets/images/"
+    }
+
+]
