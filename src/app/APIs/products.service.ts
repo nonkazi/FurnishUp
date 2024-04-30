@@ -24,11 +24,11 @@ export class ProductsService {
     return this.http.get<any>(`${this.apiUrl}/?id=${id}`);
   }
 
-
+  //post a product
   postProduct(productData: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, productData);
   }
-
+  //delete a product
   deleteProduct(productId: number){
     return this.http.delete<any>('');
 
