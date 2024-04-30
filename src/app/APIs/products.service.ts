@@ -11,11 +11,19 @@ import { FurnitureProducts } from '../interface/products';
 export class ProductsService {
 
 
+
   private apiUrl = 'https://fakestoreapi.com/products';
 
   constructor(private http: HttpClient){}
 
-  
+  getProductById(id: number = 1){
+    return this.http.get<any>(`https://jsonplaceholder.typicode.com/todos/${id}`);
+  }
+
+  getProducts(){
+    return this.http.get<any[]>('https://fakestoreapi.com/products');
+  }
+
   addProduct(productData: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, productData);
   }

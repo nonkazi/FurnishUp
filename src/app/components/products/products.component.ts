@@ -8,11 +8,13 @@ import { CartService } from 'src/app/Carts/cart.service';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
+
+
+
 export class ProductsComponent {
   
-
   constructor(private productsService: ProductsService, private cartService:CartService ){}
-
+  
   products: any[] = [];
     
 
