@@ -9,19 +9,28 @@ import { products } from '../interface/products';
 })
 export class ProductsService {
 
-  products : any[] =[]
+  // products : any[] =[]
 
-  private apiUrl = 'https://fakestoreapi.com/products';
+  private apiUrl = 'http://localhost:3000/products';
 
   constructor(private http: HttpClient){}
-
   
+  //fetch all products
+  getProducts(): Observable<any> {
+    return this.http.get<any>(this.apiUrl);
+  }
+  //fetch one products 
+  getProduct(id:number = 1): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/?id=${id}`);
+  }
+
+
   postProduct(productData: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, productData);
   }
 
-  removeProduct(productId: number){
-    return this.http.delete<any>(`https://fakestoreapi.com/products/${productId}`);
+  deleteProduct(productId: number){
+    return this.http.delete<any>('');
 
   }
   
