@@ -1,20 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ProductListService } from './product-list.service';
+import { CheckoutService } from './checkout.service';
 
-describe('ProductListService', () => {
-  let service: ProductListService;
+describe('CheckoutService', () => {
+  let service: CheckoutService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ProductListService);
+    service = TestBed.inject(CheckoutService);
   });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
 });
-
-
-
-

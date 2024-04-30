@@ -1,8 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { FurnitureProducts } from '../interface/products';
-
+import { products } from '../interface/products';
 
 
 @Injectable({
@@ -10,26 +9,29 @@ import { FurnitureProducts } from '../interface/products';
 })
 export class ProductsService {
 
+  // products : any[] =[]
 
-
-  private apiUrl = 'https://fakestoreapi.com/products';
+  private apiUrl = 'http://localhost:3000/products';
 
   constructor(private http: HttpClient){}
-
-  getProductById(id: number = 1){
-    return this.http.get<any>(`https://jsonplaceholder.typicode.com/todos/${id}`);
+  
+  //fetch all products
+  getProducts(): Observable<any> {
+    return this.http.get<any>(this.apiUrl);
+  }
+  //fetch one products 
+  getProduct(id:number = 1): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/?id=${id}`);
   }
 
-  getProducts(){
-    return this.http.get<any[]>('https://fakestoreapi.com/products');
-  }
 
-  addProduct(productData: any): Observable<any> {
+  postProduct(productData: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, productData);
   }
 
-  removeProduct(productId: number): Observable<any>{
-    return this.http.delete<any>(`https://fakestoreapi.com/products/${productId}`);
+  deleteProduct(productId: number){
+    return this.http.delete<any>('');
+
   }
   
 }
