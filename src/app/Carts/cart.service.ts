@@ -12,9 +12,8 @@ export class CartService {
   
   private cart: any[] = []
 
-  private cartItemCount = new BehaviorSubject<number>(0) 
-  productList = new BehaviorSubject<any>([]);
-  getProductData$ = this.productList.asObservable()
+  cartItemCount = new BehaviorSubject<number>(0) 
+  
 
   constructor( private http : HttpClient){}
   
@@ -37,46 +36,16 @@ export class CartService {
       }
      
     });
-
     if (!added) {
       products.quantity = 1;
       this.cart.push(products);
     }
     
-
     this.cartItemCount.next(this.cartItemCount.value + 1);
-  }
 
-  getProductData(){
-    return this.productList.asObservable(); 
   }
 
   
-
-  //CALCULATE TOTAL
-  getTotalPrice() : number{
-    return this.cart.reduce((sum, product) => ({
-            quantity: 1,
-            price: sum.price + product.price * product.quantity,
-          }),
-          
-          { quantity: 1, price: 0 }
-        ).price;
-        
-  }
-
-
-  // Remove product one by one
-  removeCartData(product: any) {
-    this.cart.map((a: any, index: any) => {
-      if (product.id === a.id) {
-        this.cart.splice(index, 1);
-        this.saveCart()
-      }
-    })
-    
-  }
-
   saveCart(): void {
     localStorage.setItem('cItems', JSON.stringify(this.cart))
   }
@@ -85,9 +54,9 @@ export class CartService {
     this.cart = JSON.parse(localStorage.getItem('cItems') as any) || [];
   }
 
-  clearCart(){
-    localStorage.clear()
-  }
+  // clearCart(){
+  //   localStorage.clear()
+  // }
 } 
 
 
@@ -124,4 +93,16 @@ export class CartService {
 
    // productInCart(product: any): boolean {
   //   return this.cart.findIndex((x: any) => x.id === product.id) > -1;
+  // }
+  
+  // //CALCULATE TOTAL
+  // getTotalPrice() : number{
+  //   return this.cart.reduce((sum, product) => ({
+  //           quantity: 1,
+  //           price: sum.price + product.price * product.quantity,
+  //         }),
+          
+  //         { quantity: 1, price: 0 }
+  //       ).price;
+        
   // }
