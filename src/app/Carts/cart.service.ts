@@ -31,9 +31,11 @@ export class CartService {
   addTocart(products:any){
     let added = false;
     this.cart.forEach((item) => {
-      item.id === products.id;
-      item.quantity += 1;
-      added = !added;
+      if(item.id === products.id){
+        item.quantity += 1;
+        added = !added;
+      }
+     
     });
 
     if (!added) {
