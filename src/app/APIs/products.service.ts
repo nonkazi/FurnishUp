@@ -29,7 +29,7 @@ export class ProductsService {
     return this.http.post<any>(this.apiUrl, productData);
   }
   //delete a product
-  deleteProduct(productId: number){
+  deleteProduct(productId: string){
     return this.http.delete<any>('');
 
   }

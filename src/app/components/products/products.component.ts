@@ -26,10 +26,6 @@ export class ProductsComponent {
     })
     
   }
-
-  
-   
-
     addToCart(product: any) {
       this.cartService.addTocart(product);
     }
