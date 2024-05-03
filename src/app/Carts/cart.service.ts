@@ -22,17 +22,17 @@ export class CartService {
     return this.cartItemCount;
   }
 
-  addTocart(products: any) {
+  addTocart(product: any) {
     let added = false;
     this.cart.forEach((item) => {
-      item.id === products.id;
+      item.id === product.id;
       item.quantity += 1;
       added = !added;
     });
 
     if (!added) {
-      products.quantity = 1;
-      this.cart.push(products);
+      product.quantity = 1;
+      this.cart.push(product);
     }
 
     this.cartItemCount.next(this.cartItemCount.value + 1);
