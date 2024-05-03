@@ -18,13 +18,20 @@
 .cartDescrip{
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     padding-left: 20px;
 }
 
+.pArt{
+    display: flex;
+    
+    
+}
+
 li{
     margin-left: 50px;
+    margin-right: 60px;
 }
 
 .product{
@@ -44,8 +51,14 @@ img{
 }
 
 .fprice{
+    // display: flex;
+    // justify-content: space-between;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    padding-left: 20px;
+    margin-right: 60px;
 }
 
 .oSum{

@@ -41,7 +41,10 @@ export class CartService {
       this.cart.push(products);
     }
     
-    this.cartItemCount.next(this.cartItemCount.value + 1);
+    if(!added){
+      this.cartItemCount.next(this.cartItemCount.value + 1);
+    }
+    
 
   }
 
@@ -54,9 +57,9 @@ export class CartService {
     this.cart = JSON.parse(localStorage.getItem('cItems') as any) || [];
   }
 
-  // clearCart(){
-  //   localStorage.clear()
-  // }
+  clearCart(){
+    localStorage.clear()
+  }
 } 
 
 

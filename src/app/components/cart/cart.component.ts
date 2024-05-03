@@ -12,6 +12,7 @@ import { ShoppingCart } from 'src/app/interface/shoppingCart';
 export class CartComponent implements OnInit {
   products: any[] = [];
   subTotal: any = 0;
+  totalQuantity: any = 0;
   
   constructor(
     private productservice: ProductsService,
@@ -19,9 +20,15 @@ export class CartComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    const cItems = localStorage.getItem("cartItems")
+    if(cItems){
+      this.products = this.cartService.getCart();
+      this.updateTotalQuantity()
+      this.updateTotal();
+      
+    }
     // this.subTotal = this.cartService.getTotalPrice();
-    this.products = this.cartService.getCart();
-    this.updateTotal();
+    
     
   }
 
@@ -41,9 +48,14 @@ export class CartComponent implements OnInit {
     );
   }
 
+  updateTotalQuantity() {
+    this.subTotal = this.products.reduce((acc, item) => acc + item.quantity, 0);
+  }
+
   increaseQuantity(item: { quantity: number }) {
     item.quantity++;
     this.updateTotal();
+    // this.updateTotalQuantity()
     
   }
 
@@ -51,6 +63,7 @@ export class CartComponent implements OnInit {
     if (item.quantity > 1) {
       item.quantity--;
       this.updateTotal();
+      // this.updateTotalQuantity()
       
     }
   }
@@ -60,6 +73,7 @@ export class CartComponent implements OnInit {
     this.subTotal -= removedItem.price * removedItem.quantity;
     // Decrease the cart item count
     this.cartService.cartItemCount.next(this.cartService.cartItemCount.value - removedItem.quantity);
+    // this.updateTotalQuantity();
 
   }
 
