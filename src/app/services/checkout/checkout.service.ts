@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { CartService } from 'src/app/Carts/cart.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CheckoutService {
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   checkout(): string {
     const orderNumber = 'ABEC123';
@@ -13,10 +14,10 @@ export class CheckoutService {
 
   }
 
-  calculateTotalFee(items: any[]): number {
+  calculateTotalFee(): number {
     let total = 0;
-    for (const item of items) {
-      total+= item.price;
+    for (const item of this.cartService.getCart()) {
+      total+= item.price * item.quantity;
     }
     return total;
   }
