@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CartService {
 
-  // private apiUrl = 'http://localhost:3000/products';
+  private apiUrl = 'http://localhost:3000/cartItems';
   
   private cart: any[] = []
 
@@ -50,7 +50,8 @@ export class CartService {
 
   
   saveCart(): void {
-    localStorage.setItem('cItems', JSON.stringify(this.cart))
+    // localStorage.setItem('cItems', JSON.stringify(this.cart))
+    this.http.post<any>(this.apiUrl, this.addTocart)
   }
 
    loadCart(): void {
