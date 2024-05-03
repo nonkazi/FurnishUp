@@ -41,9 +41,8 @@ export class CartService {
       this.cart.push(products);
     }
     
-    if(!added){
       this.cartItemCount.next(this.cartItemCount.value + 1);
-    }
+  
     
 
   }
