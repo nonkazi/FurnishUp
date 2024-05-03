@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<div class="container">
+<div class="container space">
   <div class="row mb-5">
     <div class="col-md-8" *ngFor="let item of product">
       <img
@@ -12,27 +12,21 @@
       <div class="card mt-5">
         <div class="card-body" style="background-color: #ffbf69">
           <h4 class="card-title">Full Price</h4>
-          <h5 class="card-text text-center">{{item.price}}</h5>
+          <h5 class="card-text text-center">{{"R "+item.price}}</h5>
         </div>
       </div>
-      <div class="card mt-1">
+      <div class="card mt-1" *ngFor="let item of product">
         <div class="card-body product_card">
-          <h4 class="card-title">Card title</h4>
-          <p>Some example text. Some example text.</p>
+          <h4 class="card-title">LOWER PRICE</h4>
+          <h5 class="card-text text-center">{{"R "+item.price2}}</h5>
+          <p>.</p>
         </div>
       </div>
 
       <div class="card mt-1">
-        <button
-          type="button"
-          class="btn btn-primary"
-          style="background-color: #219ebc"
-        >
+        <button type="button" class="btn btn-primary" style="background-color: #219ebc" (click)="addToCart(product)">
           Add to Cart
-        </button>
-        <!-- <button type="button" class="btn btn-primary btn-sm" (click)="addToCart(product)">
-                      Add to Cart
-                    </button> -->
+       </button>
       </div>
       <div class="card mt-1 mb-5">
         <div class="card-body product_card">
@@ -55,7 +49,7 @@
     </div>
     <div class="col-md-6">
       <div class="text-left">
-        <a href="#"><h3>View More Products</h3> </a>
+        <a routerLink="/products"><h3>View More Products</h3></a>
       </div>
     </div>
   </div>

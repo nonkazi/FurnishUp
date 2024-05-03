@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { products } from '../interface/products';
+
 
 
 @Injectable({
@@ -32,6 +32,6 @@ export class ProductsService {
   deleteProduct(productId: string){
     return this.http.delete<any>('');
 
-  }
+   }
   
 }

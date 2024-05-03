@@ -32,5 +32,7 @@ export class ProductDetailComponent implements OnInit{
      //})
 
   }
-
+    addToCart(product: any) {
+      this.cartService.addTocart(product);
+    }
 }
