@@ -42,23 +42,6 @@ export class CartService {
     }
     
       this.cartItemCount.next(this.cartItemCount.value + 1);
-  
-    
-
-  }
-
-  
-  saveCart(): void {
-    // localStorage.setItem('cItems', JSON.stringify(this.cart))
-    this.http.post<any>(this.apiUrl, this.addTocart)
-  }
-
-   loadCart(): void {
-    this.cart = JSON.parse(localStorage.getItem('cItems') as any) || [];
-  }
-
-  clearCart(){
-    localStorage.clear()
   }
 } 
 

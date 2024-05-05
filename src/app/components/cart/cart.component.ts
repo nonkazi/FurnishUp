@@ -13,6 +13,7 @@ export class CartComponent implements OnInit {
   products: any[] = [];
   subTotal: any = 0;
   totalQuantity: any = 0;
+  cart: any;
   
   constructor(
     private productservice: ProductsService,
@@ -20,24 +21,22 @@ export class CartComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const cItems = localStorage.getItem("cartItems")
-    if(cItems){
+      this.addToCart(this.cart);
       this.products = this.cartService.getCart();
       this.updateTotalQuantity()
       this.updateTotal();
       
-    }
-    // this.subTotal = this.cartService.getTotalPrice();
-    
-    
+    // this.subTotal = this.cartService.getTotalPrice(); 
   }
 
   
   addToCart(product: any) {
     this.products.push(product);
+    localStorage.setItem(this.cart, product)
   }
 
   getCart() {
+    localStorage.getItem(this.cart)
     return this.products;
   }
 
@@ -74,6 +73,7 @@ export class CartComponent implements OnInit {
     // Decrease the cart item count
     this.cartService.cartItemCount.next(this.cartService.cartItemCount.value - removedItem.quantity);
     // this.updateTotalQuantity();
+    localStorage.removeItem(this.cart)
 
   }
 
