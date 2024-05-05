@@ -37,7 +37,7 @@ ngOnInit(): void {
 }
 
 calculateTotals() {
-  this.totalFee = this.checkoutService.calculateTotalFee(this.items);
+  this.totalFee = this.checkoutService.calculateTotalFee();
   this.deliveryFee = this.includeDelivery ? this.checkoutService.calculateDeliveryFee() : 0;
   this.totalPlusDelivery = this.checkoutService.calculateTotalPlusDeliveryFee(this.totalFee, this.deliveryFee);
 }

@@ -335,6 +335,7 @@
       "id": "BBhp-L7"
     }
   ],
+
   "products": [
     {
       "id": 1,
@@ -408,5 +409,12 @@
       "category": "furniture",
       "description": "Experience comfort like never before with chair 4. Its ergonomic design and durable construction ensure years of enjoyment."
     }
+  ],
+
+  "cartItems" : [
+    {
+      
+    }
+
   ]
 }
