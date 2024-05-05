@@ -18,7 +18,10 @@ export class CartComponent implements OnInit {
   
   constructor(
     private productservice: ProductsService,
-    private cartService: CartService
+    private cartService: CartService,
+    private authService: AuthService,
+     private router: Router
+    
   ) {}
 
   ngOnInit(): void {
@@ -29,6 +32,11 @@ export class CartComponent implements OnInit {
       this.updateTotal();
       
     }
+    if (!this.authService.getIsLoggedIn()) {
+
+      this.router.navigate(['/login']);
+    }
+    
     // this.subTotal = this.cartService.getTotalPrice();
     
     
