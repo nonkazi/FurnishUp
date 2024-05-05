@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ProductsService } from 'src/app/APIs/products.service';
 import { CartService } from 'src/app/Carts/cart.service';
+import { AuthService } from 'src/app/services/checkout/authantication/auth.service';
 import { ShoppingCart } from 'src/app/interface/shoppingCart';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
