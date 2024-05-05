@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ProductsService } from 'src/app/APIs/products.service';
 import { CartService } from 'src/app/Carts/cart.service';
+import { AuthService } from 'src/app/services/checkout/authantication/auth.service';
 import { ShoppingCart } from 'src/app/interface/shoppingCart';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -15,11 +17,19 @@ export class CartComponent implements OnInit {
   subTotal: any = 0;
   cart!: ShoppingCart[];
 
-  constructor(private productservice: ProductsService, private cartService: CartService) {}
+  constructor(private productservice: ProductsService, 
+    private cartService: CartService,
+    private authService:AuthService,
+    private router: Router) {}
 
  ngOnInit(): void {
     this.subTotal = this.cartService.getTotalPrice(); 
     this.products = this.cartService.getCart();
+    //IF USER IS NOT LOGGED IN AND WANT TO ACCESS CART
+    if (!this.authService.getIsLoggedIn()) {
+     
+      this.router.navigate(['/login']);
+    }
     }
 
     deleteProduct(id: number) : void {

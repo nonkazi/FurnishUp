@@ -1,5 +1,6 @@
 import { Component, Input, OnInit} from '@angular/core';
 import { CartService } from 'src/app/Carts/cart.service';
+import { AuthService } from 'src/app/services/checkout/authantication/auth.service';
 
 
 
@@ -13,26 +14,26 @@ export class NavbarComponent  implements OnInit{
   isLoggedIn: boolean = false;
   router: any;
 
-  constructor(private cartService: CartService,) {}
+  constructor(private cartService: CartService,
+              private authService: AuthService) {}
   
 
   ngOnInit() {
     this.cartService.getCartItemCount().subscribe((count: number) => {
       this.cartItemCount = count;
-      this.isLoggedIn = true;
-
-    }
-    );
+     });
+     this.isLoggedIn = this.authService.getIsLoggedIn();
 
    
     }
   
-  logout() {
-    this.isLoggedIn = false;
-    console.log(this.isLoggedIn);
-    this.router.navigate(['/home']);
-  
+    logout() {
+      this.authService.logout(); 
+      this.isLoggedIn = false; 
+      this.router.navigate(['/home']);
+      
+    }
   }
 
   
-}
+

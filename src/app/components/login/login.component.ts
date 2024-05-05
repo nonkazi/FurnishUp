@@ -2,6 +2,7 @@ import { Component, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/checkout/authantication/auth.service';
 
 
 @Component({
@@ -12,12 +13,14 @@ import { Router } from '@angular/router';
 
   export class loginComponent {
     public LoginForm !:FormGroup
-    @Output() public isLoggedIn: boolean = false;
+    public isLoggedIn: boolean = false;
+    public loggedInEmail: string = '';
     
 
     constructor(private formbuilder:FormBuilder, 
       private http: HttpClient,
-       private router:Router){}
+       private router:Router,
+       private authService: AuthService){}
   
     ngOnInit():void
     {// this is the formcontrol as it hold both the data value and the valitator
@@ -32,15 +35,20 @@ import { Router } from '@angular/router';
            const user = res.find((details:any)=>
           {
             return details.email === this.LoginForm.value.email && details.password === this.LoginForm.value.password;
-            return details.email === this.LoginForm.value.email && details.password === this.LoginForm.value.password;
+            
           });
+
           console.log(this.LoginForm);
           console.log(this.LoginForm);
+
+
           
           if(user)
           {
             alert('Successfully Logged in');
+            this.loggedInEmail = this.LoginForm.value.email;
             this.isLoggedIn = true;
+            this.authService.login(this.loggedInEmail);
             
             this.router.navigate(["/home"])
           }
