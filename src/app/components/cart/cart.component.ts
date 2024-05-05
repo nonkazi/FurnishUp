@@ -22,7 +22,7 @@ export class CartComponent implements OnInit {
     this.products = this.cartService.getCart();
     }
 
-    deleteProduct(id: number) : void {
+    deleteProduct(id: string) : void {
 
       this.productservice.deleteProduct(id).subscribe(()=>{
         console.log("delete successful")

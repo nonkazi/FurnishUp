@@ -28,10 +28,10 @@ export class CartService {
   }
 
   // ADD TO CART BUTTON
-  addTocart(products:any){
+  addTocart(product:any){
     let added = false;
     this.cart.forEach((item) => {
-      if(item.id === products.id){
+      if(item.id === product.id){
         item.quantity += 1;
         added = !added;
       }
@@ -39,8 +39,8 @@ export class CartService {
     });
 
     if (!added) {
-      products.quantity = 1;
-      this.cart.push(products);
+      product.quantity = 1;
+      this.cart.push(product);
     }
     
 
