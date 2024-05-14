@@ -15,6 +15,7 @@ export class CartComponent implements OnInit {
   products: any[] = [];
   subTotal: any = 0;
   totalQuantity: any = 0;
+  cart: any;
   
   constructor(
     private productservice: ProductsService,
@@ -25,12 +26,12 @@ export class CartComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const cItems = localStorage.getItem("cartItems")
-    if(cItems){
+      this.addToCart(this.cart);
       this.products = this.cartService.getCart();
       this.updateTotalQuantity()
       this.updateTotal();
       
+<<<<<<< HEAD
     }
     if (!this.authService.getIsLoggedIn()) {
 
@@ -40,14 +41,19 @@ export class CartComponent implements OnInit {
     // this.subTotal = this.cartService.getTotalPrice();
     
     
+=======
+    // this.subTotal = this.cartService.getTotalPrice(); 
+>>>>>>> bf882fca9685865d4d14fe680974191838b633b1
   }
 
   
   addToCart(product: any) {
     this.products.push(product);
+    localStorage.setItem(this.cart, product)
   }
 
   getCart() {
+    localStorage.getItem(this.cart)
     return this.products;
   }
 
@@ -84,6 +90,7 @@ export class CartComponent implements OnInit {
     // Decrease the cart item count
     this.cartService.cartItemCount.next(this.cartService.cartItemCount.value - removedItem.quantity);
     // this.updateTotalQuantity();
+    localStorage.removeItem(this.cart)
 
   }
 
