@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/checkout/authantication/auth.service';
 
 
 @Component({
@@ -10,47 +11,31 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.scss']
 })
 export class registerComponent {
- 
-  //signup will be a formgroup object
-  public Register !: FormGroup
- api="http://localhost:3000/registerUsersList/"
-  constructor( private formbuilder: FormBuilder,private http: HttpClient, private router: Router){}
+  form: any = {
+    username: null,
+    email: null,
+    password: null
+  };
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
 
-  ngOnInit():void
-  {
-  
-    this.Register=this.formbuilder.group({
-      email: new FormControl('',Validators.required),
-      password: new FormControl('',Validators.required),
-      cPassword: new FormControl('',Validators.required)
-    },{validator:this.checkPasswords });
-   // this.register()
-  }
-  checkPasswords(formgroup:FormGroup):any{
-    
-    const password =formgroup.get('password')?.value;
-    const cPassword =formgroup.get('cPassword')?.value;
-    //return password === cpassword?null:{mismatch:true}
-    if (password === cPassword) {
-      return null; // Passwords match
-  } else {
-      return { passwordMismatch: true }; // Passwords don't match
-  }
-}
-  
+  constructor(private authService: AuthService) { }
 
-  register()
-  {
-    this.http.post<any>(this.api,this.Register.value).subscribe(resp=>{
+  onSubmit(): void {
+    const { username, email, password } = this.form;
 
-      alert('sign up successful');
-      //the navigator method accepts an array of route as an argument
-      this.Register.reset()
-      this.router.navigate(["/login"])
-    },error=>{
-        alert("something went wrong");
-
-    })
+    this.authService.register(username, email, password).subscribe({
+      next: data => {
+        console.log(data);
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+      },
+      error: err => {
+        this.errorMessage = err.error.message;
+        this.isSignUpFailed = true;
+      }
+    });
   }
     
   }

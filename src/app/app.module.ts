@@ -14,9 +14,11 @@ import {  HttpClientModule } from '@angular/common/http';
 import { CheckoutService } from './services/checkout/checkout.service';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { loginComponent } from './components/login/login.component';
+import { httpInterceptorProviders } from './util/http.intercerptors';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     NavbarComponent,
     HomeComponent,
@@ -28,10 +30,9 @@ import { loginComponent } from './components/login/login.component';
     CartComponent,
     CheckoutComponent,
     registerComponent,
-    SucessComponent
-  
-
-  ],
+    SucessComponent,
+      ProfileComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -39,7 +40,7 @@ import { loginComponent } from './components/login/login.component';
     HttpClientModule,
    FormsModule
   ],
-  providers: [CheckoutService],
+  providers: [CheckoutService, httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

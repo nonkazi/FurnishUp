@@ -31,19 +31,7 @@ export class CartComponent implements OnInit {
       this.updateTotalQuantity()
       this.updateTotal();
       
-<<<<<<< HEAD
-    }
-    if (!this.authService.getIsLoggedIn()) {
-
-      this.router.navigate(['/login']);
-    }
-    
-    // this.subTotal = this.cartService.getTotalPrice();
-    
-    
-=======
     // this.subTotal = this.cartService.getTotalPrice(); 
->>>>>>> bf882fca9685865d4d14fe680974191838b633b1
   }
 
   

@@ -22,7 +22,7 @@ export class NavbarComponent  implements OnInit{
     this.cartService.getCartItemCount().subscribe((count: number) => {
       this.cartItemCount = count;
      });
-     this.isLoggedIn = this.authService.getIsLoggedIn();
+   //  this.isLoggedIn = this.authService.getIsLoggedIn();
 
    
     }
